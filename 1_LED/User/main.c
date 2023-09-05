@@ -1,8 +1,10 @@
-#include "stm32f10x.h"   // 相当于51单片机中的  #include <reg51.h>
+#include "stm32f10x.h"
+#include "bsp_led.h"
 
 int main(void)
 {
-	// 来到这里的时候，系统的时钟已经被配置成72M。
+	LED_GPIO_Init();
+	LED_Ctrl(LED_G_GPIO_PIN, ON);
+	LED_Ctrl(LED_R_GPIO_PIN, ON);
 }
-
 

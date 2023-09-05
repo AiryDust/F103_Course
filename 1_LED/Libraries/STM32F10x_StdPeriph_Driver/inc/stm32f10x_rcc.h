@@ -689,9 +689,9 @@ void RCC_LSICmd(FunctionalState NewState);
 void RCC_RTCCLKConfig(uint32_t RCC_RTCCLKSource);
 void RCC_RTCCLKCmd(FunctionalState NewState);
 void RCC_GetClocksFreq(RCC_ClocksTypeDef* RCC_Clocks);
-void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);       //打开AHB时钟
-void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);     //打开APB2时钟
-void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);     //打开APB1时钟
+void RCC_AHBPeriphClockCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);
+void RCC_APB2PeriphClockCmd(uint32_t RCC_APB2Periph, FunctionalState NewState);
+void RCC_APB1PeriphClockCmd(uint32_t RCC_APB1Periph, FunctionalState NewState);
 
 #ifdef STM32F10X_CL
 void RCC_AHBPeriphResetCmd(uint32_t RCC_AHBPeriph, FunctionalState NewState);
