@@ -16,7 +16,22 @@ void LED_GPIO_Init(void)
 	GPIO_SetBits(LED_GPIO_PORT, LED_B_GPIO_PIN);
 }
 
+/**
+	@parm LED option: [LED_R_GPIO_PIN, LED_G_GPIO_PIN, LED_B_GPIO_PIN]
+	@parm state option:[ON, OFF]
+*/
 void LED_Ctrl(uint16_t LED, BitAction state)
 {
 	GPIO_WriteBit(LED_GPIO_PORT, LED, state);
 }
+
+void LED_TOGGLE(uint16_t LED)
+{
+	if (GPIO_ReadOutputDataBit(LED_GPIO_PORT, LED))
+	{
+		GPIO_ResetBits(LED_GPIO_PORT, LED);
+	}else{
+		GPIO_SetBits(LED_GPIO_PORT, LED);
+	}
+}
+

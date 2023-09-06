@@ -13,7 +13,7 @@
 
 void LED_GPIO_Init(void);
 void LED_Ctrl(uint16_t, BitAction);
-
+void LED_TOGGLE(uint16_t LED);
 
 #endif /* __BSP_LED_H */
 

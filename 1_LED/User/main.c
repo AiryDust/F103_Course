@@ -3,8 +3,14 @@
 
 int main(void)
 {
+	int i;
 	LED_GPIO_Init();
-	LED_Ctrl(LED_G_GPIO_PIN, ON);
-	LED_Ctrl(LED_R_GPIO_PIN, ON);
+	
+	while(1){
+		LED_TOGGLE(LED_G_GPIO_PIN);
+		for (i=0;i<0xfffff;i++);
+		LED_TOGGLE(LED_G_GPIO_PIN);
+		for (i=0;i<0xfffff;i++);
+	}
 }
 

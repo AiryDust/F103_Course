@@ -23,6 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
+#include "bsp_led.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -151,7 +152,17 @@ void SysTick_Handler(void)
 /*void PPP_IRQHandler(void)
 {
 }*/
-
+void EXTI0_IRQHandler(void)
+{
+	//判断中断标志位
+	if(EXTI_GetITStatus(EXTI_Line0) != RESET)
+	{
+		LED_TOGGLE(LED_R_GPIO_PIN);
+	}
+	EXTI_ClearITPendingBit(EXTI_Line0);
+	//清除中断标志位
+	
+}
 /**
   * @}
   */ 
